@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from 'react';
 
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineWhatsApp } from "react-icons/ai";
@@ -38,7 +39,7 @@ interface ITitleProps {
   level?: 1 | 2 | 3,
   mode?: 'light' | 'dark' | 'auto';
 }
-function Title({level, mode, children}: ITitleProps) {
+const Title = ({level, mode, children}: React.PropsWithChildren<ITitleProps>) => {
 
   if (!mode) {
     mode = 'light'
@@ -101,7 +102,7 @@ function Header() {
   </>)
 }
 
-function Footer(props) {
+const Footer: React.FC<{className?: string}> = (props) => {
 
   const className = `
     bg-neutral-800
