@@ -7,7 +7,9 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 
-
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -15,19 +17,7 @@ export default function Home() {
 
       <Header/>
 
-      <main className="grow-[1] bg-blue-600 flex justify-center items-center">
-        <div className="text-neutral-100 text-center">
-          <h1 className="text-3xl font-bold">
-          Servicio Desconcentrado Municipal de
-            Administración Tributaria
-          </h1>
-
-          <h2 className="text-2xl font-bold">
-            Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.
-          </h2>
-        </div>
-
-      </main>
+      <Main/>
 
       <Footer/>
     </div>
@@ -78,10 +68,12 @@ const Title = ({level, mode, children}: React.PropsWithChildren<ITitleProps>) =>
 function Header() {
   return (<>
     <header className="
-        p-2      
+        p-3
         flex
         items-center
         shadow-lg
+
+        z-50
         "
       >
         <div className="flex-1">
@@ -92,14 +84,120 @@ function Header() {
             height={100}
           />
         </div>
+
+        <div className="flex gap-3 text-blue-900">
+
+          <Link href={'/'} className="font-bold">Inicio</Link>
+          <Link href={'/about'}>¿Quiénes Somos?</Link>
+          <Link href={'/guides'}>Guía de Tramites</Link>
+          <Link href={'/bills'}>Ordenanzas</Link>
+
+        </div>
+
         <div className="flex-1 flex justify-end">
           <AiOutlineMenu 
             className="m-2"
             size={'2rem'}
           />
         </div>
+        
       </header>
   </>)
+}
+
+const Main: React.FC = () => {
+  return (
+    <main className="grow-[1]">
+      <div className="bg-blue-600 flex justify-center items-center">
+        <div className="text-neutral-100 text-center">
+          <h1 className="text-3xl font-bold">
+          Servicio Desconcentrado Municipal de
+            Administración Tributaria
+          </h1>
+
+          <h2 className="text-2xl font-bold">
+            Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.
+          </h2>
+        </div>
+
+        
+      </div>
+
+      <Card>
+        <span>Guía de trámites y servicio</span>
+        <span>Ver más</span>
+        
+        <div>
+          <p>Patentes de Vehículos y Motos (Trimestres)</p>
+          <span>Leer más</span>
+        </div>
+      </Card>
+
+      <BillsSection/>
+
+      
+
+      <div>
+        <span>Ordenanzas</span>
+        <span>Ver más</span>
+        
+        <div>
+          <p></p>
+          <span>Leer más</span>
+        </div>
+      </div>
+    </main>
+  )
+
+}
+
+const BillsSection: React.FC = () => {
+  return (
+
+    <div className="flex gap-3">
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Guía de trámites y servicio</CardTitle>
+          <CardDescription>Deploy your new project in one-click.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          
+          <Link href={'/'}>Leer más</Link>
+        </CardFooter>
+      </Card>
+
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Guía de trámites y servicio</CardTitle>
+          <CardDescription>Deploy your new project in one-click.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          
+          <Link href={'/'}>Leer más</Link>
+        </CardFooter>
+      </Card>
+
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Guía de trámites y servicio</CardTitle>
+          <CardDescription>Deploy your new project in one-click.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          
+          <Link href={'/'}>Leer más</Link>
+        </CardFooter>
+      </Card>
+    </div>
+  )
 }
 
 const Footer: React.FC<{className?: string}> = (props) => {
