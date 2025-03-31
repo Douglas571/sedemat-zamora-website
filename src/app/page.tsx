@@ -108,6 +108,20 @@ function Header() {
 const Main: React.FC = () => {
   return (
     <main className="grow-[1]">
+      <Banner/>
+
+      <GuideSection/>
+
+      <BillsSection/>
+
+      <News/>
+    </main>
+  )
+}
+
+const Banner = () => {
+  return (
+    <>
       <div className="bg-blue-600 flex justify-center items-center">
         <div className="text-neutral-100 text-center">
           <h1 className="text-3xl font-bold">
@@ -119,85 +133,165 @@ const Main: React.FC = () => {
             Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.
           </h2>
         </div>
-
-        
       </div>
+    </>
+  )
+}
 
-      <Card>
-        <span>Guía de trámites y servicio</span>
-        <span>Ver más</span>
-        
-        <div>
-          <p>Patentes de Vehículos y Motos (Trimestres)</p>
-          <span>Leer más</span>
-        </div>
-      </Card>
+const GuideSection: React.FC = () => {
 
-      <BillsSection/>
-
-      
-
-      <div>
-        <span>Ordenanzas</span>
-        <span>Ver más</span>
-        
-        <div>
-          <p></p>
-          <span>Leer más</span>
-        </div>
+  const card = (
+    <Card>
+      <div className="flex p-5 justify-between">
+        <p>Patentes de Vehículos y Motos (Trimestres)</p>
+        <Link href={'/'}>Leer más</Link>
       </div>
-    </main>
+    </Card>
   )
 
+  return (
+    <div>
+
+      <div className="flex justify-between">
+        <span>Guía de trámites y servicio</span>
+        <span>Ver más</span>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        {card}
+
+        {card}
+
+        {card}
+      </div>
+    </div>
+  )
 }
 
 const BillsSection: React.FC = () => {
+  
+
+  const card = (
+    <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Guía de trámites y servicio</CardTitle>
+          <CardDescription>Deploy your new project in one-click.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          
+        </CardContent>
+        <CardFooter className="flex justify-end">
+          
+          <Link href={'/'}>Leer más</Link>
+        </CardFooter>
+      </Card>
+  )
   return (
 
-    <div className="flex gap-3">
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>Guía de trámites y servicio</CardTitle>
-          <CardDescription>Deploy your new project in one-click.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          
-        </CardContent>
-        <CardFooter className="flex justify-end">
-          
-          <Link href={'/'}>Leer más</Link>
-        </CardFooter>
-      </Card>
+    <div>
+      <div className="flex justify-between">
+        <span>Ordenanzas</span>
+        <span>Ver más</span>
+      </div>
 
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>Guía de trámites y servicio</CardTitle>
-          <CardDescription>Deploy your new project in one-click.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          
-        </CardContent>
-        <CardFooter className="flex justify-end">
-          
-          <Link href={'/'}>Leer más</Link>
-        </CardFooter>
-      </Card>
+      <div className="flex gap-3">
+        {card}
 
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>Guía de trámites y servicio</CardTitle>
-          <CardDescription>Deploy your new project in one-click.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          
-        </CardContent>
-        <CardFooter className="flex justify-end">
-          
-          <Link href={'/'}>Leer más</Link>
-        </CardFooter>
-      </Card>
+        {card}
+
+        {card}
+      </div>
     </div>
   )
+}
+
+const News: React.FC = () => {
+
+  const data = [
+    {
+      title: 'Noticia #1',
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      imageSrc: '/images/news.jpg'
+    },
+    {
+      title: 'Noticia #2',
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      imageSrc: '/images/news.jpg'
+    },
+    {
+      title: 'Noticia #3',
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      imageSrc: '/images/news.jpg'
+    }
+  ]
+
+
+  return (
+    <div>
+      <div className="flex justify-between">
+        <p>Noticias</p>
+        <Link href={'/news'}>Ver más</Link>
+      </div>
+
+      <div>
+        {data.map( (doc, idx) => {
+          return <NewsCard 
+            key={String(idx)}
+            title={doc.title} 
+            description={doc.description}
+            imageSrc={doc.imageSrc}
+            link="/"
+          />
+        })}
+      </div>
+
+    </div>
+  )
+}
+
+interface NewsCardProps {
+  key: string,
+  title: string,
+  description: string,
+  imageSrc: string,
+  link: string,
+}
+
+const NewsCard: React.FC<NewsCardProps> = ({
+  key,
+  title,
+  description,
+  imageSrc
+}) => {
+  return (<Card>
+    <div 
+      key={key}
+      // className="flex p-5 justify-between"
+    >
+      <CardHeader>
+        <div className="overflow-hidden rounded-md bg-red-500 ">
+
+
+          <Image
+            src={imageSrc}
+            alt={`Photo by Douglas Socorro`}
+            className="aspect-[4/3] h-fit w-fit object-cover"
+            width={300}
+            height={400}
+          />
+        </div>
+      </CardHeader>
+      <CardContent>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>Card Description</CardDescription>
+      </CardContent>
+      <CardFooter>
+        <Link href={'/'}>Leer más</Link>
+      </CardFooter>
+      
+      
+    </div>
+  </Card>)
 }
 
 const Footer: React.FC<{className?: string}> = (props) => {
