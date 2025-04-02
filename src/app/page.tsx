@@ -240,7 +240,7 @@ const News: React.FC = () => {
             title={doc.title} 
             description={doc.description}
             imageSrc={doc.imageSrc}
-            link="/"
+            link="/news"
           />
         })}
       </div>
@@ -261,7 +261,8 @@ const NewsCard: React.FC<NewsCardProps> = ({
   key,
   title,
   description,
-  imageSrc
+  imageSrc,
+  link
 }) => {
   return (<Card>
     <div 
@@ -286,7 +287,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
         <CardDescription>Card Description</CardDescription>
       </CardContent>
       <CardFooter>
-        <Link href={'/'}>Leer más</Link>
+        <Link href={link ?? '/news'}>Leer más</Link>
       </CardFooter>
       
       
