@@ -110,11 +110,14 @@ const Main: React.FC = () => {
     <main className="grow-[1]">
       <Banner/>
 
-      <GuideSection/>
+      <div className=" w-[60%] m-auto">
+        <GuideSection/>
 
-      <BillsSection/>
+        <BillsSection/>
 
-      <News/>
+        <News/>
+      </div>
+      
     </main>
   )
 }
@@ -150,7 +153,7 @@ const GuideSection: React.FC = () => {
   )
 
   return (
-    <div>
+    <div className="mb-10">
 
       <div className="flex justify-between">
         <span>Guía de trámites y servicio</span>
@@ -227,20 +230,31 @@ const News: React.FC = () => {
 
 
   return (
-    <div>
+    <div className=" mb-10">
       <div className="flex justify-between">
         <p>Noticias</p>
         <Link href={'/news'}>Ver más</Link>
       </div>
 
-      <div>
+      <div className="grid lg:grid-cols-2 lg:grid-rows-2 gap-4">
         {data.map( (doc, idx) => {
+
+          let className = ''
+
+          if (idx === 0) {
+            className = 'lg:row-span-2'
+          } else if (idx === 2) {
+            className = 'lg:col-start-2 lg:row-start-2'
+          }
+
           return <NewsCard 
             key={String(idx)}
             title={doc.title} 
             description={doc.description}
             imageSrc={doc.imageSrc}
             link="/news"
+
+            className={className}
           />
         })}
       </div>
@@ -255,6 +269,8 @@ interface NewsCardProps {
   description: string,
   imageSrc: string,
   link: string,
+
+  className?: string
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({
@@ -262,12 +278,15 @@ const NewsCard: React.FC<NewsCardProps> = ({
   title,
   description,
   imageSrc,
-  link
+  link,
+
+  className
 }) => {
-  return (<Card>
+  return (
+  
+  <Card className={className ?? ''}>
     <div 
       key={key}
-      // className="flex p-5 justify-between"
     >
       <CardHeader>
         <div className="overflow-hidden rounded-md bg-red-500 ">
