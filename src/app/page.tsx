@@ -85,7 +85,7 @@ function Header() {
           />
         </div>
 
-        <div className="flex gap-3 text-blue-900">
+        <div className="hidden sm:flex gap-3 text-blue-900 ">
 
           <Link href={'/'} className="font-bold">Inicio</Link>
           <Link href={'/about'}>¿Quiénes Somos?</Link>
@@ -94,7 +94,7 @@ function Header() {
 
         </div>
 
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex justify-end sm:hidden">
           <AiOutlineMenu 
             className="m-2"
             size={'2rem'}
@@ -110,12 +110,12 @@ const Main: React.FC = () => {
     <main className="grow-[1]">
       <Banner/>
 
-      <div className=" w-[60%] m-auto">
+      <div className="px-10 max-w-[800px] m-auto">
         <GuideSection/>
 
         <BillsSection/>
 
-        <News/>
+        <NewsSection/>
       </div>
       
     </main>
@@ -125,8 +125,8 @@ const Main: React.FC = () => {
 const Banner = () => {
   return (
     <>
-      <div className="bg-blue-600 flex justify-center items-center">
-        <div className="text-neutral-100 text-center">
+      <div className="bg-blue-600 flex justify-center items-center mb-10">
+        <div className="py-40 px-10 mx-1 text-neutral-100 text-center">
           <h1 className="text-3xl font-bold">
           Servicio Desconcentrado Municipal de
             Administración Tributaria
@@ -141,26 +141,35 @@ const Banner = () => {
   )
 }
 
+interface SectionHeaderProps {
+  title: string,
+  viewMoreLink: string
+}
+const SectionHeader: React.FC<SectionHeaderProps> = ({title, viewMoreLink}) => {
+  return (<div className="pb-5 flex justify-between items-end ">
+    <h1 className="font-bold text-4xl">{title}</h1>
+    <Link className="text-blue-500 underline" href={viewMoreLink}>Ver más</Link>
+  </div>)
+}
+
 const GuideSection: React.FC = () => {
 
   const card = (
     <Card>
-      <div className="flex p-5 justify-between">
-        <p>Patentes de Vehículos y Motos (Trimestres)</p>
-        <Link href={'/'}>Leer más</Link>
+      <div className="p-5">
+        <p className="pb-5">Patentes de Vehículos y Motos (Trimestres)</p>
+        <div className="text-right">
+          <Link href={'/'}>Leer más</Link>
+        </div>
       </div>
     </Card>
   )
 
   return (
-    <div className="mb-10">
+    <div className="mb-16">
 
-      <div className="flex justify-between">
-        <span>Guía de trámites y servicio</span>
-        <span>Ver más</span>
-      </div>
-
-      <div className="flex flex-col gap-3">
+      <SectionHeader title="Guías" viewMoreLink="/guides"/>
+      <div className="flex flex-col gap-5">
         {card}
 
         {card}
@@ -175,7 +184,7 @@ const BillsSection: React.FC = () => {
   
 
   const card = (
-    <Card className="w-[350px]">
+    <Card className="">
         <CardHeader>
           <CardTitle>Guía de trámites y servicio</CardTitle>
           <CardDescription>Deploy your new project in one-click.</CardDescription>
@@ -191,13 +200,10 @@ const BillsSection: React.FC = () => {
   )
   return (
 
-    <div>
-      <div className="flex justify-between">
-        <span>Ordenanzas</span>
-        <span>Ver más</span>
-      </div>
+    <div className="mb-16">
+       <SectionHeader title="Ordenanzas" viewMoreLink="/bills"/>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-5">
         {card}
 
         {card}
@@ -208,7 +214,7 @@ const BillsSection: React.FC = () => {
   )
 }
 
-const News: React.FC = () => {
+const NewsSection: React.FC = () => {
 
   const data = [
     {
@@ -230,13 +236,10 @@ const News: React.FC = () => {
 
 
   return (
-    <div className=" mb-10">
-      <div className="flex justify-between">
-        <p>Noticias</p>
-        <Link href={'/news'}>Ver más</Link>
-      </div>
+    <div className="mb-16">
+      <SectionHeader title="Noticias" viewMoreLink="/news"/>
 
-      <div className="grid lg:grid-cols-2 lg:grid-rows-2 gap-4">
+      <div className="grid md:grid-cols-2 md:grid-rows-2 gap-5">
         {data.map( (doc, idx) => {
 
           let className = ''
