@@ -267,7 +267,6 @@ const NewsSection: React.FC = () => {
 }
 
 interface NewsCardProps {
-  key: string,
   title: string,
   description: string,
   imageSrc: string,
@@ -277,7 +276,6 @@ interface NewsCardProps {
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({
-  key,
   title,
   description,
   imageSrc,
@@ -288,9 +286,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   return (
   
   <Card className={className ?? ''}>
-    <div 
-      key={key}
-    >
+    <div>
       <CardHeader>
         <div className="overflow-hidden rounded-md bg-red-500 ">
 
@@ -339,6 +335,9 @@ const Footer: React.FC<{className?: string}> = (props) => {
       >
 
       <div className="
+        py-32
+        text-center
+
         max-w-[60%]
         flex
         flex-col
@@ -349,12 +348,12 @@ const Footer: React.FC<{className?: string}> = (props) => {
 
         lg:flex-row
       ">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-5 items-center">
           <Image
             alt="logo del municipio zamora"
             src={'/images/alcaldia_zamora_logo.png'}
-            width={100}
-            height={100}
+            width={150}
+            height={150}
           />
 
           <p>
@@ -362,27 +361,31 @@ const Footer: React.FC<{className?: string}> = (props) => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-5 items-center">
           <h1 className="text-3xl font-bold">
             Contacto
           </h1>
           
-          <h2 className="text-2xl font-bold">
-            Horario
-          </h2>
-          <p>
-            Lunes a viernes 8:00 a.m. a 3:00 p.m.
-          </p>
+          <div>
+            <h2 className="text-2xl font-bold">
+              Horario
+            </h2>
+            <p>
+              Lunes a viernes 8:00 a.m. a 3:00 p.m.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-bold">
-            Dirección
-          </h2>
-          <p className="flex">
-            <div className="flex items-center">
-              <MdLocationOn size={'30px'}/>
+          <div>
+            <h2 className="text-2xl font-bold">
+              Dirección
+            </h2>
+            <div className="flex">
+              <div className="flex items-center">
+                <MdLocationOn size={'30px'}/>
+              </div>
+              <a href="https://maps.app.goo.gl/ksm4uTyyraLt9sD86" target="_blank" className="flex items-center"> Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.</a>
             </div>
-            <a href="https://maps.app.goo.gl/ksm4uTyyraLt9sD86" target="_blank" className="flex items-center"> Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.</a>
-          </p>
+          </div>
 
           <h2 className="flex gap-1 items-center text-2xl font-bold">
             <AiOutlineWhatsApp size={'30px'}/>
@@ -392,8 +395,8 @@ const Footer: React.FC<{className?: string}> = (props) => {
 
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold">
+        <div className="flex flex-col gap-5">
+          <h1 className="text-3xl font-bold text-center">
             Siguenos en nuestras redes
           </h1>
 
@@ -408,10 +411,7 @@ const Footer: React.FC<{className?: string}> = (props) => {
         </div>
       </div>
 
-      
-
-      </footer>
-  
+    </footer>
   </>)
 }
 
