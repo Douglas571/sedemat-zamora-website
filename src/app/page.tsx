@@ -110,7 +110,7 @@ const Main: React.FC = () => {
     <main className="grow-[1]">
       <Banner/>
 
-      <div className="px-10 max-w-[800px] m-auto">
+      <div className="px-10 max-w-[900px] m-auto">
         <GuideSection/>
 
         <BillsSection/>
@@ -239,16 +239,16 @@ const NewsSection: React.FC = () => {
     <div className="mb-16">
       <SectionHeader title="Noticias" viewMoreLink="/news"/>
 
-      <div className="grid md:grid-cols-2 md:grid-rows-2 gap-5">
+      <div className="flex flex-col gap-5">
         {data.map( (doc, idx) => {
 
-          let className = ''
+          // let className = ''
 
-          if (idx === 0) {
-            className = 'lg:row-span-2'
-          } else if (idx === 2) {
-            className = 'lg:col-start-2 lg:row-start-2'
-          }
+          // if (idx === 0) {
+          //   className = 'lg:row-span-2'
+          // } else if (idx === 2) {
+          //   className = 'lg:col-start-2 lg:row-start-2'
+          // }
 
           return <NewsCard 
             key={String(idx)}
@@ -257,7 +257,7 @@ const NewsSection: React.FC = () => {
             imageSrc={doc.imageSrc}
             link="/news"
 
-            className={className}
+            // className={className}
           />
         })}
       </div>
@@ -286,27 +286,32 @@ const NewsCard: React.FC<NewsCardProps> = ({
   return (
   
   <Card className={className ?? ''}>
-    <div>
-      <CardHeader>
+    <div className={'flex flex-col p-6 gap-5 md:flex-row '}>
+      <header>
         <div className="overflow-hidden rounded-md bg-red-500 ">
 
 
-          <Image
-            src={imageSrc}
-            alt={`Photo by Douglas Socorro`}
-            className="aspect-[4/3] h-fit w-fit object-cover"
-            width={300}
-            height={400}
-          />
+          <figure className="relative aspect-[4/3] min-w-[300px]">
+            <Image
+                src={imageSrc}
+                alt={`Photo by Douglas Socorro`}
+                className=""
+                fill={true}
+                objectFit="cover"
+
+              />
+          </figure>
         </div>
-      </CardHeader>
-      <CardContent>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>Card Description</CardDescription>
-      </CardContent>
-      <CardFooter>
-        <Link href={link ?? '/news'}>Leer más</Link>
-      </CardFooter>
+      </header>
+      <div className="flex flex-col md:justify-between">
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardContent>
+        <CardFooter className="">
+          <Link href={link ?? '/news'}>Leer más</Link>
+        </CardFooter>
+      </div>
       
       
     </div>
