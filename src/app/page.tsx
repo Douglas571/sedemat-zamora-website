@@ -145,7 +145,6 @@ const NewsSection: React.FC = () => {
 
       <div className="flex flex-col gap-5">
         {newsList.map( (doc, idx) => {
-          console.log({doc})
 
           // let className = ''
 
@@ -160,7 +159,7 @@ const NewsSection: React.FC = () => {
             title={doc.metadata.title} 
             publishedAt={doc.metadata.publishedAt}
             imageSrc={doc.metadata?.cover ?? null}
-            link={`/news/${doc.slug}.mdx`}
+            link={`/news/${doc.slug}`}
 
             // className={className}
           />

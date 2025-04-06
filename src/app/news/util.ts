@@ -49,8 +49,20 @@ function getMDXData(dir) {
   })
 }
 
+interface NewsMarkadownFile {
+  metadata: {
+    title: string,
+    publishedAt: string,
+    updatedAt: string,
+    summary: string,
+    cover: string,
+  },
+  slug: string,
+  content: string,
+}
+
 // TODO: Get to know why it doesn't accept .md files
-export function getNewsList() {
+export function getNewsList(): NewsMarkadownFile[] {
   const filesPath = path.join(process.cwd(), 'src', 'app', 'content', 'news')
   return getMDXData(filesPath)
 }
