@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Header from '@/components/Header'
 
 import { getNewsList } from "../app/news/util" 
+import { getGuidesList } from "@/lib/guides";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -73,6 +74,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({title, viewMoreLink}) => {
 }
 
 const GuideSection: React.FC = () => {
+
+  const guidesList = getGuidesList()
 
   const card = (
     <Card>
