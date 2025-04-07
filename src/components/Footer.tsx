@@ -27,10 +27,11 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
     >
 
       <div className="
-        py-32
-        text-center
+        py-10
+        
+        px-10
 
-        max-w-[60%]
+        
         flex
         flex-col
         items-center
@@ -38,27 +39,35 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
 
         gap-16
 
-        lg:flex-row
+        text-center
+        md:text-left
+        md:flex-row
+
+
       ">
-        <div className="flex flex-1 flex-col gap-5 items-center">
-          <Image
+        <div className="flex flex-1 flex-col gap-5 self-start">
+          <figure className="min-w-[100%] flex justify-center md:justify-start flex-1 border-b-2 pb-8 ">
+            <Image
+            
+
             alt="logo del municipio zamora"
             src={'/images/alcaldia_zamora_logo.png'}
             width={150}
             height={150} />
+          </figure>
 
           <p>
             En nuestra alcaldía, la transparencia es nuestra prioridad. Accede a la información pública de manera clara y accesible
           </p>
         </div>
 
-        <div className="flex flex-1 flex-col gap-5 items-center">
-          <h1 className="text-3xl font-bold">
+        <div className="flex flex-1 flex-col gap-5 ">
+          <h1 className="text-2xl font-bold">
             Contacto
           </h1>
 
           <div>
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-xl font-bold">
               Horario
             </h2>
             <p>
@@ -67,31 +76,33 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-xl font-bold pb-2">
               Dirección
             </h2>
             <div className="flex">
-              <div className="flex items-center">
+              <div className="flex">
                 <MdLocationOn size={'30px'} />
               </div>
               <a href="https://maps.app.goo.gl/ksm4uTyyraLt9sD86" target="_blank" className="flex items-center"> Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.</a>
             </div>
           </div>
 
-          <h2 className="flex gap-1 items-center text-2xl font-bold">
+          <h2 className="flex gap-1 items-top text-xl font-bold">
             <AiOutlineWhatsApp size={'30px'} />
 
-            <a href='https://wa.me/+584126743853' target="_blank">Whatsapp: +58 412-6743853</a>
+            <div className="flex-1">
+              <a href='https://wa.me/+584126743853' target="_blank">Whatsapp: +58 412-6743853</a>
+            </div>
           </h2>
 
         </div>
 
-        <div className="flex flex-1 flex-col gap-5">
-          <h1 className="text-3xl font-bold text-center">
+        <div className="flex flex-1 flex-col gap-5 self-center md:self-start">
+          <h1 className="text-2xl font-bold">
             Siguenos en nuestras redes
           </h1>
 
-          <div className="flex gap-5 justify-center">
+          <div className="flex gap-5 self-center md:self-start">
 
             <a href={SEDEMAT_ZAMORA_FB} target="_blank">
               <BsFacebook size={'1.5rem'} />

@@ -1,15 +1,15 @@
 import parseYamlFile from "./yaml";
 
-interface GuideDocument {
+interface BillDocument {
   title: string;
   publishedAt: string;
   summary: string;
   url: string;
 }
 
-export function getGuidesList(): GuideDocument[] {
+export function getBillsList(): BillDocument[] {
   try {
-    return parseYamlFile('src/app/content/guides/index.yaml') as GuideDocument[];
+    return parseYamlFile('src/app/content/bills/index.yaml') as BillDocument[];
     
   } catch (error) {
     console.log(error)

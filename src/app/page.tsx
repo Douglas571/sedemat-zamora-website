@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import { getNewsList } from "../app/news/util" 
 import { getGuidesList } from "@/lib/guides";
 import { Footer } from "@/components/Footer";
+import { getBillsList } from "@/lib/bills";
 
 export default function Home() {
   return (
@@ -123,31 +124,47 @@ const GuideSection: React.FC = () => {
 
 const BillsSection: React.FC = () => {
   
+  const billsList = getBillsList()
 
-  const card = (
-    <Card className="">
+  const cards = billsList.sort((a, b) => {
+    // sort by publish at date 
+    // Convert publishedAt strings to Date objects for comparison
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+    
+    // Sort from newest to oldest (descending order)
+    return dateB.getTime() - dateA.getTime();
+
+  }).slice(0, 3).map((bill, idx) => {
+    return (<Card key={idx}>
+      
+
         <CardHeader>
-          <CardTitle>Guía de trámites y servicio</CardTitle>
-          <CardDescription>Deploy your new project in one-click.</CardDescription>
+          <CardTitle>{bill.title}</CardTitle>
+          <CardDescription>{bill.publishedAt}</CardDescription>
         </CardHeader>
-        
-        <CardFooter className="flex justify-end">
-          
-          <Link href={'/'} className="text-blue-500 underline">Leer más</Link>
-        </CardFooter>
-      </Card>
-  )
+        <CardContent className="text-right">
+          <a 
+            href={bill.url} 
+            className="text-blue-500 underline"
+            
+            target="_blank"
+            rel="noopener noreferrer"  
+
+          >Leer más</a>
+        </CardContent>
+      
+    </Card>)
+  })
+
+  
   return (
 
     <div className="mb-16">
        <SectionHeader title="Ordenanzas" viewMoreLink="/bills"/>
 
       <div className="flex flex-col gap-5">
-        {card}
-
-        {card}
-
-        {card}
+        {cards}
       </div>
     </div>
   )
