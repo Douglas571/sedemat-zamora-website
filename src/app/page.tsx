@@ -13,6 +13,8 @@ import { getNewsList } from "../app/news/util"
 import { getGuidesList } from "@/lib/guides";
 import { Footer } from "@/components/Footer";
 import { getBillsList } from "@/lib/bills";
+import BillSectionCard from "@/components/BillSectionCard";
+import GuideSectionCard from "@/components/GuideSectionCard";
 
 export default function Home() {
   return (
@@ -78,37 +80,8 @@ const GuideSection: React.FC = () => {
 
   const guidesList = getGuidesList()
 
-  console.log({guidesList})
-
-  const cards = guidesList.sort((a, b) => {
-    // sort by publish at date 
-    // Convert publishedAt strings to Date objects for comparison
-    const dateA = new Date(a.publishedAt);
-    const dateB = new Date(b.publishedAt);
-    
-    // Sort from newest to oldest (descending order)
-    return dateB.getTime() - dateA.getTime();
-
-  }).slice(0, 3).map((g, idx) => {
-    return (<Card key={idx}>
-      
-
-        <CardHeader>
-          <CardTitle>{g.title}</CardTitle>
-          <CardDescription>{g.publishedAt}</CardDescription>
-        </CardHeader>
-        <CardContent className="text-right">
-          <a 
-            href={g.url} 
-            className="text-blue-500 underline"
-            
-            target="_blank"
-            rel="noopener noreferrer"  
-
-          >Leer más</a>
-        </CardContent>
-      
-    </Card>)
+  const cards = guidesList.slice(0, 3).map((g, idx) => {
+    return (<GuideSectionCard {...g} key={idx}/>)
   })
 
   return (
@@ -126,35 +99,8 @@ const BillsSection: React.FC = () => {
   
   const billsList = getBillsList()
 
-  const cards = billsList.sort((a, b) => {
-    // sort by publish at date 
-    // Convert publishedAt strings to Date objects for comparison
-    const dateA = new Date(a.publishedAt);
-    const dateB = new Date(b.publishedAt);
-    
-    // Sort from newest to oldest (descending order)
-    return dateB.getTime() - dateA.getTime();
-
-  }).slice(0, 3).map((bill, idx) => {
-    return (<Card key={idx}>
-      
-
-        <CardHeader>
-          <CardTitle>{bill.title}</CardTitle>
-          <CardDescription>{bill.publishedAt}</CardDescription>
-        </CardHeader>
-        <CardContent className="text-right">
-          <a 
-            href={bill.url} 
-            className="text-blue-500 underline"
-            
-            target="_blank"
-            rel="noopener noreferrer"  
-
-          >Leer más</a>
-        </CardContent>
-      
-    </Card>)
+  const cards = billsList.slice(0, 3).map((bill, idx) => {
+    return (<BillSectionCard {...bill} key={idx} />)
   })
 
   
