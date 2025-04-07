@@ -40,7 +40,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
 
         lg:flex-row
       ">
-        <div className="flex flex-col gap-5 items-center">
+        <div className="flex flex-1 flex-col gap-5 items-center">
           <Image
             alt="logo del municipio zamora"
             src={'/images/alcaldia_zamora_logo.png'}
@@ -52,7 +52,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-5 items-center">
+        <div className="flex flex-1 flex-col gap-5 items-center">
           <h1 className="text-3xl font-bold">
             Contacto
           </h1>
@@ -86,7 +86,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
 
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-1 flex-col gap-5">
           <h1 className="text-3xl font-bold text-center">
             Siguenos en nuestras redes
           </h1>

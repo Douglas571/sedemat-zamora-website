@@ -77,27 +77,45 @@ const GuideSection: React.FC = () => {
 
   const guidesList = getGuidesList()
 
-  const card = (
-    <Card>
-      <div className="p-5">
-        <p className="pb-5">Patentes de Vehículos y Motos (Trimestres)</p>
-        <div className="text-right">
-          <Link href={'/'} className="text-blue-500 underline">Leer más</Link>
-        </div>
-      </div>
-    </Card>
-  )
+  console.log({guidesList})
+
+  const cards = guidesList.sort((a, b) => {
+    // sort by publish at date 
+    // Convert publishedAt strings to Date objects for comparison
+    const dateA = new Date(a.publishedAt);
+    const dateB = new Date(b.publishedAt);
+    
+    // Sort from newest to oldest (descending order)
+    return dateB.getTime() - dateA.getTime();
+
+  }).slice(0, 3).map((g, idx) => {
+    return (<Card key={idx}>
+      
+
+        <CardHeader>
+          <CardTitle>{g.title}</CardTitle>
+          <CardDescription>{g.publishedAt}</CardDescription>
+        </CardHeader>
+        <CardContent className="text-right">
+          <a 
+            href={g.url} 
+            className="text-blue-500 underline"
+            
+            target="_blank"
+            rel="noopener noreferrer"  
+
+          >Leer más</a>
+        </CardContent>
+      
+    </Card>)
+  })
 
   return (
     <div className="mb-16">
 
       <SectionHeader title="Guías" viewMoreLink="/guides"/>
       <div className="flex flex-col gap-5">
-        {card}
-
-        {card}
-
-        {card}
+        {cards}
       </div>
     </div>
   )
@@ -112,9 +130,7 @@ const BillsSection: React.FC = () => {
           <CardTitle>Guía de trámites y servicio</CardTitle>
           <CardDescription>Deploy your new project in one-click.</CardDescription>
         </CardHeader>
-        <CardContent>
-          
-        </CardContent>
+        
         <CardFooter className="flex justify-end">
           
           <Link href={'/'} className="text-blue-500 underline">Leer más</Link>
