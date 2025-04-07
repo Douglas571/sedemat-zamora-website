@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 function Header() {
   return (<>
     <header className="
-        p-3
+        p-7
         flex
         items-center
         shadow-lg
