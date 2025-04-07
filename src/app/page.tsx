@@ -15,6 +15,7 @@ import { Footer } from "@/components/Footer";
 import { getBillsList } from "@/lib/bills";
 import BillSectionCard from "@/components/BillSectionCard";
 import GuideSectionCard from "@/components/GuideSectionCard";
+import NewsSectionCard from "@/components/NewsSectionCard";
 
 export default function Home() {
   return (
@@ -136,12 +137,12 @@ const NewsSection: React.FC = () => {
           //   className = 'lg:col-start-2 lg:row-start-2'
           // }
 
-          return <NewsCard 
+          return <NewsSectionCard 
             key={String(idx)}
             title={doc.metadata.title} 
             publishedAt={doc.metadata.publishedAt}
-            imageSrc={doc.metadata?.cover ?? null}
-            link={`/news/${doc.slug}`}
+            cover={doc.metadata?.cover ?? null}
+            slug={doc.slug}
 
             // className={className}
           />
@@ -150,57 +151,4 @@ const NewsSection: React.FC = () => {
 
     </div>
   )
-}
-
-interface NewsCardProps {
-  title: string,
-  publishedAt: string,
-  imageSrc: string,
-  link: string,
-
-  className?: string
-}
-
-const NewsCard: React.FC<NewsCardProps> = ({
-  title,
-  publishedAt,
-  imageSrc,
-  link,
-
-  className
-}) => {
-
-  return (
-  
-  <Card className={className ?? ''}>
-    <div className={'flex flex-col p-6 gap-5 md:flex-row '}>
-      <header>
-        <div className="overflow-hidden rounded-md bg-red-500 ">
-
-
-          <figure className="relative aspect-[4/3] min-w-[300px]">
-            <Image
-                src={imageSrc}
-                alt={`Photo by Douglas Socorro`}
-                className=""
-                fill={true}
-                objectFit="cover"
-
-              />
-          </figure>
-        </div>
-      </header>
-      <div className="flex flex-col md:justify-between">
-        <CardContent>
-          <h1 className="text-3xl">{title}</h1>
-          <CardDescription>{publishedAt}</CardDescription>
-        </CardContent>
-        <CardFooter className="">
-          <Link href={link ?? '/news'} className="text-blue-500 underline">Leer más</Link>
-        </CardFooter>
-      </div>
-      
-      
-    </div>
-  </Card>)
 }

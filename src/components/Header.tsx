@@ -1,15 +1,26 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineMenu } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 function Header() {
-  return (<>
-    <header className="
+  const pathname = usePathname();
+
+  // Helper function to determine if link is active
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+
+  return (
+    <>
+      <header
+        className="
         p-7
         flex
         items-center
         shadow-lg
-
         z-50
         "
       >
@@ -23,23 +34,44 @@ function Header() {
         </div>
 
         <div className="hidden sm:flex gap-3 text-blue-900 ">
-
-          <Link href={'/'} className="font-bold">Inicio</Link>
-          <Link href={'/about'}>¿Quiénes Somos?</Link>
-          <Link href={'/guides'}>Guía de Tramites</Link>
-          <Link href={'/bills'}>Ordenanzas</Link>
-
+          <Link 
+            href={'/'} 
+            className={isActive('/') ? "font-bold" : ""}
+          >
+            Inicio
+          </Link>
+          <Link 
+            href={'/about'} 
+            className={isActive('/about') ? "font-bold" : ""}
+          >
+            ¿Quiénes Somos?
+          </Link>
+          <Link 
+            href={'/guides'} 
+            className={isActive('/guides') ? "font-bold" : ""}
+          >
+            Guía de Tramites
+          </Link>
+          <Link 
+            href={'/bills'} 
+            className={isActive('/bills') ? "font-bold" : ""}
+          >
+            Ordenanzas
+          </Link>
+          <Link 
+            href={'/news'} 
+            className={isActive('/news') ? "font-bold" : ""}
+          >
+            Noticias
+          </Link>
         </div>
 
         <div className="flex-1 flex justify-end sm:hidden">
-          <AiOutlineMenu 
-            className="m-2"
-            size={'2rem'}
-          />
+          <AiOutlineMenu className="m-2" size={'2rem'} />
         </div>
-        
       </header>
-  </>)
+    </>
+  );
 }
 
 export default Header;

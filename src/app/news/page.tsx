@@ -1,21 +1,33 @@
 import { getNewsList } from "./util" 
+import { Footer } from "@/components/Footer"
+import Header from "@/components/Header"
+import NewsSectionCard from "@/components/NewsSectionCard"
 
-async function NewsIndex() {
+function NewsList() {
 
-  const newsList = await getNewsList()
+  const newsList = getNewsList()
 
   return (
-    <>    
-      <h1>Noticias</h1>
+    <>
+      <Header/>
 
-      <div>
-        {newsList.map( (n, idx) => <p key={idx}>{n.slug}</p> )}
-      </div>
+      <main className="px-10 py-16 max-w-[900px] m-auto min-h-[100vh]">
+
+        <div className="pb-10">
+            <h1 className="text-3xl font-bold">Noticias</h1>
+        </div>
+
+        <div className="flex flex-col gap-5 ">
+          {newsList.map( (n, idx) =>
+            <NewsSectionCard {...n} {...n.metadata} key={idx}/>
+          )}
+        </div>
+
+      </main>
+
+      <Footer/>
     </>
-
   )
 }
 
-
-
-export default NewsIndex
+export default NewsList
