@@ -18,6 +18,7 @@ function Header() {
       <header
         className="
         p-7
+        px-16
         flex
         items-center
         shadow-lg
@@ -33,18 +34,12 @@ function Header() {
           />
         </div>
 
-        <div className="hidden sm:flex gap-3 text-blue-900 ">
+        <div className="hidden sm:flex gap-6 text-blue-900 ">
           <Link 
             href={'/'} 
             className={isActive('/') ? "font-bold" : ""}
           >
             Inicio
-          </Link>
-          <Link 
-            href={'/about'} 
-            className={isActive('/about') ? "font-bold" : ""}
-          >
-            ¿Quiénes Somos?
           </Link>
           <Link 
             href={'/guides'} 
@@ -63,6 +58,13 @@ function Header() {
             className={isActive('/news') ? "font-bold" : ""}
           >
             Noticias
+          </Link>
+          
+          <Link 
+            href={'/about'} 
+            className={isActive('/about') ? "font-bold" : ""}
+          >
+            ¿Quiénes Somos?
           </Link>
         </div>
 
