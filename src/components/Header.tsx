@@ -2,15 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 function Header() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Helper function to determine if link is active
   const isActive = (path: string) => {
     return pathname === path;
+  };
+
+  // Toggle menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when a link is clicked
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -23,6 +35,7 @@ function Header() {
         items-center
         shadow-lg
         z-50
+        relative
         "
       >
         <div className="flex-1">
@@ -71,8 +84,68 @@ function Header() {
         </div>
 
         <div className="flex-1 flex justify-end sm:hidden">
-          <AiOutlineMenu className="m-2" size={'2rem'} />
+          <button onClick={toggleMenu} className="m-2">
+            {isMenuOpen ? (
+              <AiOutlineClose size={'2rem'} />
+            ) : (
+              <AiOutlineMenu size={'2rem'} />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="
+            sm:hidden
+            absolute
+            top-full
+            left-0
+            right-0
+            bg-white
+            shadow-lg
+            p-4
+            flex
+            flex-col
+            gap-4
+            z-50
+          ">
+            <Link 
+              href={'/'} 
+              className={isActive('/') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              Inicio
+            </Link>
+            <Link 
+              href={'/guides'} 
+              className={isActive('/guides') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              Guía de Tramites
+            </Link>
+            <Link 
+              href={'/bills'} 
+              className={isActive('/bills') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              Ordenanzas
+            </Link>
+            <Link 
+              href={'/news'} 
+              className={isActive('/news') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              Noticias
+            </Link>
+            <Link 
+              href={'/about'} 
+              className={isActive('/about') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              ¿Quiénes Somos?
+            </Link>
+          </div>
+        )}
       </header>
     </>
   );
