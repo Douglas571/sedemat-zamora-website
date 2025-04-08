@@ -50,17 +50,35 @@ const Main: React.FC = () => {
 const Banner = () => {
   return (
     <>
-      <div className="bg-blue-600 flex justify-center items-center mb-10">
-        <div className="py-40 px-10 mx-1 text-neutral-100 text-center">
-          <h1 className="text-3xl font-bold">
-          Servicio Desconcentrado Municipal de
-            Administración Tributaria
-          </h1>
+      
 
-          <h2 className="text-2xl font-bold">
-            Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.
-          </h2>
-        </div>
+      <div className='relative'>
+        <figure className='relative min-h-[200px] md:min-h-[500px] backdrop-blur-lg'>
+          <Image
+            className=''
+
+            src='/images/main_banner.jpg'
+            fill={true}
+            alt="guides banner"
+            objectFit='cover' 
+
+          />
+
+          <div className="bg-blue-600 bg-opacity-75 flex justify-center items-center mb-10 absolute h-[100%] ">
+            <div className="py-40 px-10 mx-1 text-neutral-100 text-center">
+              <h1 className="text-3xl font-bold">
+              Servicio Desconcentrado Municipal de
+                Administración Tributaria
+              </h1>
+
+              <h2 className="text-2xl font-bold">
+                Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.
+              </h2>
+            </div>
+          </div>
+        </figure>
+
+        
       </div>
     </>
   )

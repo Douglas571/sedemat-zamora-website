@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import BillSectionCard from "@/components/BillSectionCard";
 import { Footer } from "@/components/Footer"
 import Header from "@/components/Header"
@@ -14,6 +16,20 @@ function Bills() {
   return (
     <>
       <Header/>
+
+      <div className=''>
+        <figure className='relative min-h-[200px] md:min-h-[500px] '>
+          <Image
+            className=''
+
+            src='/images/bills_banner.png'
+            fill={true}
+            alt="guides banner"
+            objectFit='cover' 
+
+          />
+        </figure>
+      </div>
 
       <main className="px-10 py-16 max-w-[900px] m-auto">
 
