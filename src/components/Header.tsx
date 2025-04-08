@@ -18,7 +18,7 @@ function Header() {
       <header
         className="
         p-7
-        px-16
+        md:px-16
         flex
         items-center
         shadow-lg

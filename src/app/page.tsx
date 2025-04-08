@@ -52,8 +52,15 @@ const Banner = () => {
     <>
       
 
-      <div className='relative'>
-        <figure className='relative min-h-[200px] md:min-h-[500px] backdrop-blur-lg'>
+      <div className='relative mb-10 h-[500px]'>
+        <figure className='
+          relative 
+
+          min-h-[100%] 
+          md:min-h-[500px] 
+
+          backdrop-blur-lg
+          '>
           <Image
             className=''
 
@@ -64,7 +71,19 @@ const Banner = () => {
 
           />
 
-          <div className="bg-blue-600 bg-opacity-75 flex justify-center items-center mb-10 absolute h-[100%] ">
+          <div className="
+            absolute 
+            h-[100%] 
+            md:min-w-[100%]
+          
+            bg-blue-600 
+            bg-opacity-75 
+            flex 
+            justify-center 
+            items-center 
+            mb-10 
+            
+            ">
             <div className="py-40 px-10 mx-1 text-neutral-100 text-center">
               <h1 className="text-3xl font-bold">
               Servicio Desconcentrado Municipal de
