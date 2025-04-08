@@ -26,12 +26,14 @@ function Header() {
         "
       >
         <div className="flex-1">
-          <Image
-            alt="sedemat zamora logo"
-            src={'/images/sedemat_dark_logo.png'}
-            width={100}
-            height={100}
-          />
+          <Link href={'/'}>
+            <Image
+              alt="sedemat zamora logo"
+              src={'/images/sedemat_dark_logo.png'}
+              width={100}
+              height={100}
+            />
+          </Link>
         </div>
 
         <div className="hidden sm:flex gap-6 text-blue-900 ">
