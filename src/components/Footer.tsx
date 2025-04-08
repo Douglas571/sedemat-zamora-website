@@ -57,7 +57,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
           </figure>
 
           <p>
-            En nuestra alcaldía, la transparencia es nuestra prioridad. Accede a la información pública de manera clara y accesible
+            En nuestra alcaldía, la transparencia es nuestra prioridad. Accede a la información pública de manera clara y accesible.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
               <div className="flex">
                 <MdLocationOn size={'30px'} />
               </div>
-              <a href="https://maps.app.goo.gl/ksm4uTyyraLt9sD86" target="_blank" className="flex items-center"> Oficina Principal: Delicias 2, Alcaldía del Municipio Zamora, plnata baja.</a>
+              <a href="https://maps.app.goo.gl/ksm4uTyyraLt9sD86" target="_blank" className="flex items-center"> Oficina Principal: Delicias II, Planta Baja, Sede Alí Primera - Alcaldía de Zamora.</a>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
 
         <div className="flex flex-1 flex-col gap-5 self-center md:self-start">
           <h1 className="text-2xl font-bold">
-            Siguenos en nuestras redes
+            Siguenos en Nuestras Redes
           </h1>
 
           <div className="flex gap-5 self-center md:self-start">

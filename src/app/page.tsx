@@ -91,7 +91,7 @@ const Banner = () => {
 
               <Link href='https://www.google.com/maps/place/FJGG%2BHM3/data=!4m7!3m6!1s0x8e84235b11c277df:0xadd90f98d02e27ea!8m2!3d11.4763586!4d-69.3733773!16s%2Fg%2F11tjbvnlfz!19sChIJ33fCEVsjhI4R6icu0JgP2a0?coh=219680&utm_campaign=tt-rcs&entry=tts&g_ep=EgoyMDI1MDEyMi4wIPu8ASoASAFQAw%3D%3D'>
                 <h2 className="text-2xl font-bold">
-                  Oficina Principal: Delicias II, Planta Baja, Sede Alí Pirmera - Alcaldía de Zamora
+                  Oficina Principal: Delicias II, Planta Baja, Sede Alí Primera - Alcaldía de Zamora
                 </h2>
               </Link>
             </div>

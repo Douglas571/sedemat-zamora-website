@@ -60,7 +60,7 @@ function Header() {
             href={'/guides'} 
             className={isActive('/guides') ? "font-bold" : ""}
           >
-            Guía de Tramites
+            Guías de Tramites
           </Link>
           <Link 
             href={'/bills'} 
@@ -121,7 +121,7 @@ function Header() {
               className={isActive('/guides') ? "font-bold" : ""}
               onClick={closeMenu}
             >
-              Guía de Tramites
+              Guías de Tramites
             </Link>
             <Link 
               href={'/bills'} 
