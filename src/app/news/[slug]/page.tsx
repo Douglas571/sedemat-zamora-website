@@ -37,7 +37,7 @@ async function NewsArticle({
 
         </figure>
       
-        <div className="prose self-center">
+        <div className="px-10 prose self-center">
           <CustomMDX source={news.content}/>
         </div>
         
