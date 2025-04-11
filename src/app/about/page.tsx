@@ -23,14 +23,14 @@ function About() {
           <h2>Visión</h2>
           <p>Ser una institución modelo en organización, eficiencia y efectividad, moderna, acorde con el desarrollo socio económico del país, que fomente la cultura tributaria y garantice el cumplimiento de las obligaciones y deberes de los contribuyentes del municipio.</p>
 
-          <h2>Intendente: Manolo Ramones</h2>
+          <h2>Alcalde Del Municipio Zamora: Orlando Jesus Millán Martinez</h2>
           <Image
             className='float-right px-8'
 
-            src={'/images/intendente_pfp.jpg'}
+            src={'/images/alcalde_pfp.jpg'}
             width={300}
             height={300}
-            alt='Manolo Ramones, Intendente Municipal'
+            alt='Orlando Millán, Alcalde del Municipio Zamora'
           />
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           
