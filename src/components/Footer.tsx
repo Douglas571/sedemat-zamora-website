@@ -91,7 +91,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
             <AiOutlineWhatsApp size={'30px'} />
 
             <div className="flex-1">
-              <a href='https://wa.me/+584126743853' target="_blank">Whatsapp: +58 412-6743853</a>
+              <a href='https://wa.me/+584126743853' target="_blank">+58 412-6743853</a>
             </div>
           </h2>
 
