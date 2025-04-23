@@ -27,9 +27,10 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
     >
 
       <div className="
+        max-w-[800px]
         py-10
         
-        px-10
+        
 
         
         flex
@@ -37,7 +38,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
         items-center
         justify-center
 
-        gap-16
+        gap-10
 
         text-center
         md:text-left
@@ -97,12 +98,12 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
 
         </div>
 
-        <div className="flex flex-1 flex-col gap-5 self-center md:self-start">
+        <div className="flex flex-1 flex-col gap-5 self-center md:self-start text-center">
           <h1 className="text-2xl font-bold">
             Siguenos en Nuestras Redes
           </h1>
 
-          <div className="flex gap-5 self-center md:self-start">
+          <div className="flex gap-5 self-center md:self-center">
 
             <a href={SEDEMAT_ZAMORA_FB} target="_blank">
               <BsFacebook size={'1.5rem'} />
