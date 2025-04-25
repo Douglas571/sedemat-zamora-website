@@ -25,7 +25,7 @@ const NewsSectionCard: React.FC<NewsSectionCardProps> = ({
   <Card className={className ?? ''}>
     <div className={'flex flex-col p-6 gap-5 md:flex-row '}>
       <header>
-        <div className="overflow-hidden rounded-md bg-red-500 ">
+        <div className="overflow-hidden rounded-md">
 
 
           <figure className="relative aspect-[4/3] min-w-[300px]">

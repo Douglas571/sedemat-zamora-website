@@ -5,6 +5,7 @@ publishedAt: '2025-04-21'
 summary: 'Balneario limpio, turistas contentos en Cumarebo'
 cover: /images/posts/balneario_zamora_cover.jpg
 cover_og: /images/posts/balneario_zamora_cover_800.jpg
+cover_alt: "Temporadistas disfrutando en la orilla de la playa"
 
 ---
 

@@ -26,10 +26,10 @@ async function NewsArticle({
       <Header/>
 
       <main className="pb-16 flex flex-col">
-        <figure className="mb-5 overflow-hidden relative bg-red-500 min-h-[500px]">
+        <figure className="mb-5 overflow-hidden relative min-h-[500px]">
           <Image
             src={news?.metadata.cover ?? ''}
-            alt={`Photo by Douglas Socorro`}
+            alt={news?.metadata.cover_alt}
             className=""
             fill={true}
             objectFit="cover"
@@ -93,20 +93,20 @@ export async function generateMetadata(
     return news.slug === slug
   })
 
- 
   return {
     title: news?.metadata.title,
     description: news?.metadata.summary,
     openGraph: {
+      url: new URL("https://sedemat-zamora-website.vercel.app/"),
       images: [
         {
           url: news?.metadata.cover_og ?? '',
           width: 800,
           height: 600,
+          alt: news?.metadata.cover_og ?? ''
         }
-      ]
+      ],
     },
-
     metadataBase: new URL("https://sedemat-zamora-website.vercel.app/"),
   }
 }

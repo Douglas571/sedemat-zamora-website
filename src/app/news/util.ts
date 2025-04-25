@@ -8,6 +8,7 @@ type Metadata = {
   summary: string,
   cover: string,
   cover_og: string,
+  cover_alt: string,
 }
 
 interface NewsMarkdownFile {
