@@ -1,3 +1,5 @@
+import type { Metadata, ResolvingMetadata } from 'next'
+
 import Image from "next/image"
 import Header from "@/components/Header"
 
@@ -12,7 +14,7 @@ async function NewsArticle({
 }) {
 
   const { slug } = await params
-  
+
   const newsList = getNewsList()
 
   const news = newsList.find((news) => {
@@ -72,6 +74,40 @@ export async function generateStaticParams() {
   return newsList.map((news) => ({
     slug: news.slug,
   }))
+}
+ 
+type Props = {
+  params: Promise<{ slug: string }>
+  // searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+ 
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = (await params).slug
+ 
+  const newsList = getNewsList()
+
+  const news = newsList.find((news) => {
+    return news.slug === slug
+  })
+
+ 
+  return {
+    title: news?.metadata.title,
+    description: news?.metadata.summary,
+    openGraph: {
+      
+      images: [
+        {
+          url: news?.metadata.cover ?? '',
+          width: 800,
+          height: 600,
+        }
+      ]
+    },
+  }
 }
 
 export const dynamicParams = false
