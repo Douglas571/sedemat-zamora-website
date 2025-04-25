@@ -7,7 +7,7 @@ type Metadata = {
   updatedAt: string,
   summary: string,
   cover: string,
-  cover_op: string,
+  cover_og: string,
 }
 
 interface NewsMarkdownFile {
