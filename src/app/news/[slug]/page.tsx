@@ -101,7 +101,7 @@ export async function generateMetadata(
       
       images: [
         {
-          url: news?.metadata.cover ?? '',
+          url: news?.metadata.cover_og ?? '',
           width: 800,
           height: 600,
         }
