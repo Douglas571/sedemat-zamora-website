@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "npx next dev --turbopack",
-    "build": "npx next build",
+    "build": "next build && next-image-export-optimizer",
     "start": "npx next start",
-    "lint": "npx next lint"
+    "lint": "npx next lint",
+    "serve": "npx http-server ./out -p 80"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -18,8 +19,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
+    "http-server": "^14.1.1",
     "lucide-react": "^0.479.0",
     "next": "15.1.6",
+    "next-image-export-optimizer": "^1.19.0",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -40,7 +40,7 @@ function Header() {
       >
         <div className="flex-1">
           <Link href={'/'}>
-            <Image
+            <ExportedImage
               alt="sedemat zamora logo"
               src={'/images/sedemat_dark_logo.png'}
               width={100}

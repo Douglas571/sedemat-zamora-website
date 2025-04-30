@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ExportedImage from "next-image-export-optimizer";
 import { Footer } from "@/components/Footer"
 import GuideSectionCard from "@/components/GuideSectionCard"
 import Header from "@/components/Header"
@@ -18,7 +18,7 @@ function Guides() {
 
       <div className=''>
         <figure className='relative min-h-[200px] md:min-h-[500px] '>
-          <Image
+          <ExportedImage
             className=''
 
             src='/images/guides_banner.png'

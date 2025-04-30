@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer";
 import Header from "@/components/Header"
 
 import { getNewsList } from "../util"
@@ -27,9 +27,9 @@ async function NewsArticle({
 
       <main className="pb-16 flex flex-col">
         <figure className="mb-5 overflow-hidden relative min-h-[500px]">
-          <Image
+          <ExportedImage
             src={news?.metadata.cover ?? ''}
-            alt={news?.metadata.cover_alt}
+            alt={news?.metadata.cover_alt ?? ''}
             className=""
             fill={true}
             objectFit="cover"

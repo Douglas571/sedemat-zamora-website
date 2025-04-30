@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardFooter } from "./ui/card"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer";
 
 interface NewsSectionCardProps {
   title: string,
@@ -29,7 +29,7 @@ const NewsSectionCard: React.FC<NewsSectionCardProps> = ({
 
 
           <figure className="relative aspect-[4/3] min-w-[300px]">
-            <Image
+            <ExportedImage
                 src={cover}
                 alt={`Photo by Douglas Socorro`}
                 className=""

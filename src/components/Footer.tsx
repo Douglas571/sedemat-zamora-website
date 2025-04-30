@@ -1,5 +1,5 @@
 import { SEDEMAT_ZAMORA_FB, SEDEMAT_ZAMORA_IG } from "@/constants";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import React from "react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
@@ -48,7 +48,7 @@ export const Footer: React.FC<{ className?: string; }> = (props) => {
       ">
         <div className="flex flex-1 flex-col gap-5 self-start">
           <figure className="min-w-[100%] flex justify-center md:justify-start flex-1 border-b-2 pb-8 ">
-            <Image
+            <ExportedImage
             
 
             alt="logo del municipio zamora"

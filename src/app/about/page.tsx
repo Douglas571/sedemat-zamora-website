@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ExportedImage from "next-image-export-optimizer";
 
 import { Footer } from "@/components/Footer"
 import Header from "@/components/Header"
@@ -24,7 +24,7 @@ function About() {
           <p>Ser una institución modelo en organización, eficiencia y efectividad, moderna, acorde con el desarrollo socio económico del país, que fomente la cultura tributaria y garantice el cumplimiento de las obligaciones y deberes de los contribuyentes del municipio.</p>
 
           <h2>Alcalde Del Municipio Zamora: Orlando Jesus Millán Martinez</h2>
-          <Image
+          <ExportedImage
             className='float-right px-8'
 
             src={'/images/alcalde_pfp.jpg'}
@@ -41,7 +41,7 @@ function About() {
             <h2>Organigrama Estructural Del Servicio Desconcentrado Municipal De Administración Tributaria del Municipio Zamora (SEDEMAT Zamora)</h2>
           </div>
           <figure className='relative min-h-[500px] md:min-h-[800px]'>
-            <Image
+            <ExportedImage
               className='object-contain'
               src={'/images/organigrama.png'}
               fill={true}

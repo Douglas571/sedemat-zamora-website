@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ExportedImage from "next-image-export-optimizer";
 
 import BillSectionCard from "@/components/BillSectionCard";
 import { Footer } from "@/components/Footer"
@@ -19,7 +19,7 @@ function Bills() {
 
       <div className=''>
         <figure className='relative min-h-[200px] md:min-h-[500px] '>
-          <Image
+          <ExportedImage
             className=''
 
             src='/images/bills_banner.png'

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import React from 'react';
 
 import { AiOutlineMenu } from "react-icons/ai";
@@ -61,7 +61,7 @@ const Banner = () => {
 
           backdrop-blur-lg
           '>
-          <Image
+          <ExportedImage
             className=''
 
             src='/images/main_banner.jpg'
