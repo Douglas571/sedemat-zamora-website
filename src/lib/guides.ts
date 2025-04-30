@@ -5,6 +5,8 @@ interface GuideDocument {
   publishedAt: string;
   summary: string;
   url: string;
+
+  isPinned?: boolean
 }
 
 export function getGuidesList(): GuideDocument[] {

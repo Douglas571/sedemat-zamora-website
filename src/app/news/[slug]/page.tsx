@@ -97,7 +97,8 @@ export async function generateMetadata(
     title: news?.metadata.title,
     description: news?.metadata.summary,
     openGraph: {
-      url: new URL("https://sedemat-zamora-website.vercel.app/"),
+      //url: new URL("https://sedemat-zamora-website.vercel.app/"),
+      url: new URL("http://sedematzamorafalcon.con.ve"),
       images: [
         {
           url: news?.metadata.cover_og ?? '',
@@ -107,7 +108,7 @@ export async function generateMetadata(
         }
       ],
     },
-    metadataBase: new URL("https://sedemat-zamora-website.vercel.app/"),
+    metadataBase: new URL("http://sedematzamorafalcon.con.ve"),
   }
 }
 

@@ -4,11 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 interface GuideSectionCardProps {
   title: string,
   publishedAt: string,
-  url: string
+  url: string,
+  isPinned?: boolean,
+
+  showPinnedStyles?: boolean
 }
 
 const GuideSectionCard: React.FC<GuideSectionCardProps> = (params) => {
-  return (<Card>
+
+    const isPinnedClass = 'border-yellow-500'
+
+    return (<Card className={(params.isPinned && params.showPinnedStyles) ? isPinnedClass : ''}>
     <CardHeader>
       <CardTitle>{params.title}</CardTitle>
       <CardDescription>{params.publishedAt}</CardDescription>

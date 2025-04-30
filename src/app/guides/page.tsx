@@ -4,12 +4,18 @@ import GuideSectionCard from "@/components/GuideSectionCard"
 import Header from "@/components/Header"
 import { getGuidesList } from "@/lib/guides"
 
+import { Separator } from "@/components/ui/separator"
+
 function Guides() {
 
   const guidesList = getGuidesList()
 
-  const cards = guidesList.map((g, idx) => {
+  const cards = guidesList.filter( g => !g.isPinned ).map((g, idx) => {
     return (<GuideSectionCard {...g} key={idx}/>)
+  })
+
+  const pinnedCards = guidesList.filter( g => g.isPinned ).map((g, idx) => {
+    return (<GuideSectionCard {...g} showPinnedStyles key={idx}/>)
   })
 
   return (
@@ -35,6 +41,17 @@ function Guides() {
         <div className="pb-10">
             <h1 className="text-3xl font-bold">Guías de tramites</h1>
         </div>
+
+        <div className="pb-10">
+            <h2 className="text-2xl font-bold">📌 Destacadas</h2>
+        </div>
+
+        <div className="flex gap-5 flex-col">
+          {pinnedCards} 
+        </div>
+
+        
+        <Separator className="my-7 mb-10"/>               
 
         <div className="flex gap-5 flex-col">
           {cards} 

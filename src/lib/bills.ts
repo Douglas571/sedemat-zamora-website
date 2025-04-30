@@ -5,6 +5,8 @@ interface BillDocument {
   publishedAt: string;
   summary: string;
   url: string;
+
+  isPinned?: boolean
 }
 
 export function getBillsList(): BillDocument[] {
