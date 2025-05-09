@@ -15,7 +15,7 @@ function About() {
         </div>
 
         <div className="prose ">
-          <p>El Servicio Desconcentrado Municipal de Administración Tributaria del Municipio Zamora, conocido como el SEDEMAT Zamora, es el organismo que ofrece la base de sustentabilidad para el desarrollo del estado. Tiene una responsabilidad vital que permite lograr los objetivos de financiamiento de 9 de cada 10 actividades de gestión de la Alcaldía de Zamora en beneficio de la región.</p>
+          <p>El <strong>Servicio Desconcentrado Municipal de Administración Tributaria del Municipio Zamora</strong>, conocido como el <strong>SEDEMAT Zamora</strong>, es el organismo que ofrece la base de sustentabilidad para el desarrollo del estado. Tiene una responsabilidad vital que permite lograr los objetivos de financiamiento de 9 de cada 10 actividades de gestión de la Alcaldía de Zamora en beneficio de la región.</p>
 
           <h2>Misión</h2>
           <p>Dirigir, gestionar, fiscalizar el sistema tributario municipal que por mandato constitucional y legal le corresponde al municipio Zamora del estado Falcón.</p>
@@ -32,7 +32,11 @@ function About() {
             height={300}
             alt='Orlando Millán, Alcalde del Municipio Zamora'
           />
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p><strong>Orlando Jes&uacute;s Mill&aacute;n Mart&iacute;nez</strong> es un destacado servidor p&uacute;blico zamorano con una larga trayectoria en la administraci&oacute;n municipal. Fue elegido por primera vez como alcalde en el per&iacute;odo 1995-2000, reelecto para 2000-2004, y nuevamente en 2021-2025, demostrando la confianza de sus coterr&aacute;neos en su liderazgo. Su formaci&oacute;n y valores, basados en la solidaridad y el trabajo comunitario, han guiado su gesti&oacute;n, enfrentando desaf&iacute;os pol&iacute;ticos con determinaci&oacute;n para mejorar la calidad de vida en Zamora.</p>
+
+          <p>Durante sus mandatos, Mill&aacute;n Mart&iacute;nez ha logrado gestionar recursos clave para obras y proyectos municipales, superando obst&aacute;culos administrativos. Destacan sus pol&iacute;ticas sociales inclusivas, dirigidas a ni&ntilde;os, j&oacute;venes y adultos mayores, sin distinci&oacute;n de ideolog&iacute;a o estatus social. Su enfoque pr&aacute;ctico, bajo el lema <strong>&quot;Con hechos, no palabras&quot;</strong>, refleja su compromiso con soluciones tangibles para las necesidades de la comunidad.</p>
+
+          <p>Convencido de la importancia de la unidad, Mill&aacute;n Mart&iacute;nez promueve la integraci&oacute;n de todos los sectores sociales para impulsar el desarrollo de Zamora. Su liderazgo, marcado por perseverancia y fe en la justicia divina, sigue siendo un pilar fundamental para el progreso del municipio, manteniendo su dedicaci&oacute;n al servicio p&uacute;blico con pasi&oacute;n y entrega.</p>
           
         </div>
 
