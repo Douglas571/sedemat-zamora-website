@@ -12,7 +12,18 @@ function Header() {
 
   // Helper function to determine if link is active
   const isActive = (path: string) => {
-    return pathname === path;
+
+    // console.log('pathname: ', pathname, ' - path: ', path);
+
+    if (pathname.startsWith(path) && path !== '/') {
+      return true;
+
+    } else if (pathname === path && path === '/') {
+      return true;
+
+    }
+
+    return false
   };
 
   // Toggle menu visibility
