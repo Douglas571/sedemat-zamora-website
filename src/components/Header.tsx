@@ -12,8 +12,7 @@ function Header() {
 
   // Helper function to determine if link is active
   const isActive = (path: string) => {
-    console.log(pathname, ' ? ', path);
-    return pathname.startsWith(path);
+    return pathname === path;
   };
 
   // Toggle menu visibility
