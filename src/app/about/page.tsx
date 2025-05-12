@@ -8,8 +8,23 @@ function About() {
     <>
       <Header/>
 
-      <main className="px-10 py-16 max-w-[900px] m-auto min-h-[100vh] flex flex-col">
+      <div className=''>
+        <figure className='relative min-h-[200px] md:min-h-[500px] '>
+          <ExportedImage
+            className=''
 
+            src='/images/main_banner_group.jpg'
+            fill={true}
+            alt="guides banner"
+            objectFit='cover' 
+
+          />
+        </figure>
+      </div>
+
+
+      <main className="px-10 py-16 max-w-[900px] m-auto min-h-[100vh] flex flex-col">
+        
         <div className="pb-10">
             <h1 className="text-3xl font-bold">¿Quiénes Somos?</h1>
         </div>
