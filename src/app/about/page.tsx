@@ -36,7 +36,7 @@ function About() {
 
           <p>Durante sus mandatos, Mill&aacute;n Mart&iacute;nez ha logrado gestionar recursos clave para obras y proyectos municipales, superando obst&aacute;culos administrativos. Destacan sus pol&iacute;ticas sociales inclusivas, dirigidas a ni&ntilde;os, j&oacute;venes y adultos mayores, sin distinci&oacute;n de ideolog&iacute;a o estatus social. Su enfoque pr&aacute;ctico, bajo el lema <strong>&quot;Con hechos, no palabras&quot;</strong>, refleja su compromiso con soluciones tangibles para las necesidades de la comunidad.</p>
 
-          <p>Convencido de la importancia de la unidad, Mill&aacute;n Mart&iacute;nez promueve la integraci&oacute;n de todos los sectores sociales para impulsar el desarrollo de Zamora. Su liderazgo, marcado por perseverancia y fe en la justicia divina, sigue siendo un pilar fundamental para el progreso del municipio, manteniendo su dedicaci&oacute;n al servicio p&uacute;blico con pasi&oacute;n y entrega.</p>
+          <p>Convencido de la importancia de la unidad, Mill&aacute;n Mart&iacute;nez promueve la integraci&oacute;n de todos los sectores sociales para impulsar el desarrollo de Zamora. Su liderazgo, marcado por perseverancia y f&eacute; en la justicia divina, sigue siendo un pilar fundamental para el progreso del municipio, manteniendo su dedicaci&oacute;n al servicio p&uacute;blico con pasi&oacute;n y entrega.</p>
           
         </div>
 
