@@ -64,7 +64,7 @@ const Banner = () => {
           <ExportedImage
             className=''
 
-            src='/images/main_banner.jpg'
+            src='/images/main_banner_group.jpg'
             fill={true}
             alt="guides banner"
             objectFit='cover' 
