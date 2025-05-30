@@ -1,6 +1,6 @@
 {
   "name": "sedemat-zamora-website",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "npx next dev --turbopack",
@@ -13,6 +13,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.4",
+    "@next/third-parties": "^15.3.2",
     "@radix-ui/react-separator": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.2",
     "@types/mdx": "^2.0.13",
