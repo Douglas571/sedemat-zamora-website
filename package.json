@@ -11,8 +11,8 @@
     "upload": "scp -r ./out root@sedematzamorafalcon.com.ve:/root/sedemat_system/website",
 
     "serve_https": "npx http-server ./out -p 443 -S -C /etc/letsencrypt/live/sedematzamorafalcon.com.ve/fullchain.pem -K /etc/letsencrypt/live/sedematzamorafalcon.com.ve/privkey.pem",
-    
-    "renovate_certificate": "sudo certbot -q"
+
+    "renovate_certificate_ssl": "sudo certbot -q"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
