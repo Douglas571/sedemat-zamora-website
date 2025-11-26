@@ -8,7 +8,7 @@
     "start": "npx next start",
     "lint": "npx next lint",
     "serve": "npx http-server ./out -p 80",
-    "upload": "scp -r ./out root@sedematzamorafalcon.com.ve:/root/sedemat_system/website",
+    "upload": "scp -r ./out root@sedematzamorafalcon.com.ve:/root/website",
 
     "serve_https": "npx http-server ./out -p 443 -S -C /etc/letsencrypt/live/sedematzamorafalcon.com.ve/fullchain.pem -K /etc/letsencrypt/live/sedematzamorafalcon.com.ve/privkey.pem",
 
