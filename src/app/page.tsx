@@ -13,9 +13,11 @@ import { getNewsList } from "../app/news/util"
 import { getGuidesList } from "@/lib/guides";
 import { Footer } from "@/components/Footer";
 import { getBillsList } from "@/lib/bills";
+import { fetchTaxesAndFeesData } from '@/lib/exchangeRates';
 import BillSectionCard from "@/components/BillSectionCard";
 import GuideSectionCard from "@/components/GuideSectionCard";
 import NewsSectionCard from "@/components/NewsSectionCard";
+import TaxesListingClient from "@/components/TaxesListingClient";
 
 export default function Home() {
   return (
@@ -39,6 +41,8 @@ const Main: React.FC = () => {
         <GuideSection/>
 
         <BillsSection/>
+
+        <TaxesSection/>
 
         <NewsSection/>
       </div>
@@ -187,6 +191,15 @@ const NewsSection: React.FC = () => {
         })}
       </div>
 
+    </div>
+  )
+}
+
+const TaxesSection = () => {
+  return (
+    <div className="mb-16">
+      <SectionHeader title="Tasas e Impuestos Municipales" viewMoreLink="/fees-and-taxes"/>
+      <TaxesListingClient />
     </div>
   )
 }

@@ -80,6 +80,12 @@ function Header() {
             Ordenanzas
           </Link>
           <Link 
+            href={'/fees-and-taxes'} 
+            className={isActive('/fees-and-taxes') ? "font-bold" : ""}
+          >
+            Tasas e Impuestos Municipales
+          </Link>
+          <Link 
             href={'/news'} 
             className={isActive('/news') ? "font-bold" : ""}
           >
