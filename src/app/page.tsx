@@ -38,11 +38,11 @@ const Main: React.FC = () => {
       <Banner/>
 
       <div className="px-10 max-w-[900px] m-auto">
+        <TaxesSection/>
+        
         <GuideSection/>
 
         <BillsSection/>
-
-        <TaxesSection/>
 
         <NewsSection/>
       </div>
