@@ -60,7 +60,7 @@ function Header() {
           </Link>
         </div>
 
-        <div className="hidden sm:flex gap-6 text-blue-900 ">
+        <div className="hidden lg:flex gap-6 text-blue-900 ">
           <Link 
             href={'/'} 
             className={isActive('/') ? "font-bold" : ""}
@@ -100,7 +100,7 @@ function Header() {
           </Link>
         </div>
 
-        <div className="flex-1 flex justify-end sm:hidden">
+        <div className="flex-1 flex justify-end lg:hidden">
           <button onClick={toggleMenu} className="m-2">
             {isMenuOpen ? (
               <AiOutlineClose size={'2rem'} />
@@ -113,7 +113,7 @@ function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="
-            sm:hidden
+            lg:hidden
             absolute
             top-full
             left-0
@@ -146,6 +146,13 @@ function Header() {
               onClick={closeMenu}
             >
               Ordenanzas
+            </Link>
+            <Link 
+              href={'/fees-and-taxes'} 
+              className={isActive('/fees-and-taxes') ? "font-bold" : ""}
+              onClick={closeMenu}
+            >
+              Tasas e Impuestos Municipales
             </Link>
             <Link 
               href={'/news'} 
