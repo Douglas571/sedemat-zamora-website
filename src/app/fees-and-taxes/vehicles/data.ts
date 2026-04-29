@@ -16,7 +16,7 @@ export const vehicleTaxes: VehicleTaxType[] = [
     id: 'camionetas-particulares',
     type: 'Camionetas Particulares',
     description: '',
-    taxTcmmv: 12,
+    taxTcmmv: 10,
   },
   {
     id: 'motocicletas',
@@ -38,7 +38,7 @@ export const vehicleTaxes: VehicleTaxType[] = [
   },
   {
     id: 'autobuses-mas-31-puestos',
-    type: 'Autobuses con más de 31 Puestos',
+    type: 'Autobuses con más de 32 Puestos',
     description: '',
     taxTcmmv: 10,
   },
@@ -47,12 +47,6 @@ export const vehicleTaxes: VehicleTaxType[] = [
     type: 'Vehículo de Carga Pesada Tipo Camión 350, 750 y 800',
     description: '',
     taxTcmmv: 10,
-  },
-  {
-    id: 'vehiculo-carga-pesada',
-    type: 'Vehículo de Carga Pesada, Tipo Camión 750-6000',
-    description: '',
-    taxTcmmv: 12,
   },
   {
     id: 'gandolas',

@@ -20,10 +20,6 @@ export default function VehicleTaxesPage() {
             Impuesto Municipal sobre Patentes de Vehículos.
           </h1>
 
-          <p className="text-lg text-slate-600 mb-6">
-            El Impuesto Municipal sobre Patentes de Vehículos se calcula en base al valor actual del TCMMV publicado por el BCV. A continuación se presenta una tabla con los montos vigentes para cada tipo de vehículo:
-          </p>
-
           <VehiclesTableClient />
         </div>
       </main>

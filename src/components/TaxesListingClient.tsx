@@ -43,13 +43,17 @@ export default function TaxesListingClient() {
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-100 shadow-sm">
                   <span className="block text-sm font-medium text-slate-500 mb-1">Pago por {firstMonth.months} mes:</span>
                   <span className="text-2xl font-bold text-emerald-700">
-                    Bs. {firstMonth.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    {firstMonth.totalBs !== null 
+                      ? `Bs. ${firstMonth.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                      : 'No disponible'}
                   </span>
                 </div>
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-100 shadow-sm">
                   <span className="block text-sm font-medium text-slate-500 mb-1">Pago por {wholeYear.months} meses:</span>
                   <span className="text-2xl font-bold text-emerald-700">
-                    Bs. {wholeYear.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    {wholeYear.totalBs !== null 
+                      ? `Bs. ${wholeYear.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                      : 'No disponible'}
                   </span>
                 </div>
               </div>
