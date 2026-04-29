@@ -45,7 +45,7 @@ export default function TaxesListingClient() {
                   <span className="text-2xl font-bold text-emerald-700">
                     {firstMonth.totalBs !== null 
                       ? `Bs. ${firstMonth.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-                      : 'No disponible'}
+                      : `${firstMonth.totalTcmmv.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} TCMMV-BCV`}
                   </span>
                 </div>
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-100 shadow-sm">
@@ -53,7 +53,7 @@ export default function TaxesListingClient() {
                   <span className="text-2xl font-bold text-emerald-700">
                     {wholeYear.totalBs !== null 
                       ? `Bs. ${wholeYear.totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-                      : 'No disponible'}
+                      : `${wholeYear.totalTcmmv.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} TCMMV-BCV`}
                   </span>
                 </div>
               </div>
